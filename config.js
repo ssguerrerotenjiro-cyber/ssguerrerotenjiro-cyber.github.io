@@ -8,15 +8,15 @@
 window.TEMPLO = {
   // Enlace al APK. Con GitHub Releases, este enlace siempre apunta a la
   // última versión que subas. Cambia ssguerrerotenjiro-cyber por tu usuario de GitHub.
-  apk: '',  // se rellena solo cuando el APK esté publicado
+  apk: 'https://github.com/ssguerrerotenjiro-cyber/ssguerrerotenjiro-cyber.github.io/releases/latest/download/TempleOfStrength.apk',
 
   // Datos que se muestran debajo del botón de descarga.
   version: '1.0.0',
-  tamano: '',            // por ejemplo: '48 MB'. Vacío = no se muestra.
+  tamano: '67 MB',            // por ejemplo: '48 MB'. Vacío = no se muestra.
   android: 'Android 7 o superior',
 
   // Huella SHA-256 del APK (ver la guía). Vacío = no se muestra.
-  sha256: '',
+  sha256: '9017eb669f98c12114c29d60c3e7dd515f5382fe96332420d664fb9ec6f2dcdd',
 
   // Enlace a la versión web, si la publicas (para iPhone). Vacío = no se muestra.
   web: '',
