@@ -23,6 +23,6 @@ window.TEMPLO = {
 
   // Contacto y responsable de los datos (aparecen en las páginas legales).
   correo: 'temple-of-strength@outlook.com',
-  responsable: 'Temple of Strength',
+  responsable: 'Johan Sebastián Guerrero Tenjo',
   domicilio: 'Colombia',
 };
