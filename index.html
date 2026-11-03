@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Temple of Strength: entrena y levanta tu templo</title>
+<meta name="description" content="App gratis de entrenamiento con alma de dojo: rangos por músculo, un maestro con IA, tu propio templo y un Clan de progreso. Descárgala para Android.">
+<meta name="theme-color" content="#06050A">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Temple of Strength: entrena y levanta tu templo">
+<meta property="og:description" content="App gratis de entrenamiento con alma de dojo: rangos por músculo, un maestro con IA, tu propio templo y un Clan de progreso. Descárgala para Android.">
+<meta property="og:image" content="https://ssguerrerotenjiro-cyber.github.io/img/og.png">
+<meta property="og:url" content="https://ssguerrerotenjiro-cyber.github.io/">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icono.svg" type="image/svg+xml">
+<link rel="icon" href="img/icono-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fuentes/serif-300.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="css/templo.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="marca" href="./"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="h1"><stop offset="0" stop-color="#8B5CF6" stop-opacity=".34"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="l1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F1FA"/><stop offset="1" stop-color="#B79CFF"/></linearGradient>
+    <mask id="m1" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><circle cx="62.6" cy="45.8" r="37.8" fill="#000"/></mask>
+  </defs>
+  <circle class="halo" cx="50" cy="50" r="79.8" fill="url(#h1)"/>
+  <g class="creciente"><circle cx="50" cy="50" r="42" fill="url(#l1)" mask="url(#m1)"/></g>
+  <g class="torii" fill="none" stroke="#B79CFF" stroke-linecap="round">
+    <path pathLength="1" stroke-width="3.4" d="M29.4 36.2Q48 31.4 66.6 36.2"/>
+    <path pathLength="1" stroke-width="2.6" d="M32.4 40.4H63.6"/>
+    <path pathLength="1" stroke-width="2.6" d="M33.6 40.4L36 66.5"/>
+    <path pathLength="1" stroke-width="2.6" d="M62.4 40.4L60 66.5"/>
+    <path pathLength="1" stroke-width="2.6" d="M35.4 48.2H60.6"/>
+    <path pathLength="1" stroke-width="1.8" d="M48 40.4V48.2"/>
+  </g>
+</svg>Temple of Strength</a>
+    <nav aria-label="Principal">
+      <a class="opcional" href="#camino">La app</a>
+      <a href="#instalar">Instalar</a>
+      <a href="#seguridad">Seguridad</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="portada" aria-labelledby="titulo">
+    <div class="estrellas" aria-hidden="true"></div>
+    <canvas class="petalos" aria-hidden="true"></canvas>
+    <svg class="montanas" viewBox="0 0 1440 340" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="niebla" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B5CF6" stop-opacity="0"/><stop offset=".55" stop-color="#8B5CF6" stop-opacity=".10"/><stop offset="1" stop-color="#06050A" stop-opacity="0"/></linearGradient>
+  </defs>
+  <path fill="#1B1233" d="M0 210 120 150 210 185 330 96 430 160 520 120 640 170 760 82 880 150 990 112 1110 168 1230 104 1340 150 1440 128V340H0Z"/>
+  <rect y="150" width="1440" height="120" fill="url(#niebla)"/>
+  <path fill="#110B20" d="M0 250 140 196 260 232 380 170 500 222 610 190 740 236 870 178 1000 230 1120 196 1250 240 1360 204 1440 222V340H0Z"/>
+  <path fill="#06050A" d="M0 296 180 262 330 282 520 248 700 284 860 258 1040 290 1200 262 1440 288V340H0Z"/>
+  <g fill="#06050A" transform="translate(1046 222)">
+    <path d="M-4 0Q18-7 40 0V4Q18-2-4 4Z"/><rect x="0" y="6" width="36" height="3"/><rect x="5" y="4" width="3.4" height="38"/><rect x="27.6" y="4" width="3.4" height="38"/><rect x="4" y="14" width="28" height="2.6"/>
+  </g>
+</svg>
+    <div class="contenedor">
+      <div class="luna-grande"><svg class="" viewBox="0 0 100 100" role="img" aria-label="Luna creciente con un torii, el emblema de Temple of Strength" focusable="false">
+  <defs>
+    <radialGradient id="h2"><stop offset="0" stop-color="#8B5CF6" stop-opacity=".34"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="l2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F1FA"/><stop offset="1" stop-color="#B79CFF"/></linearGradient>
+    <mask id="m2" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><circle cx="62.6" cy="45.8" r="37.8" fill="#000"/></mask>
+  </defs>
+  <circle class="halo" cx="50" cy="50" r="79.8" fill="url(#h2)"/>
+  <g class="creciente"><circle cx="50" cy="50" r="42" fill="url(#l2)" mask="url(#m2)"/></g>
+  <g class="torii" fill="none" stroke="#B79CFF" stroke-linecap="round">
+    <path pathLength="1" stroke-width="3.4" d="M29.4 36.2Q48 31.4 66.6 36.2"/>
+    <path pathLength="1" stroke-width="2.6" d="M32.4 40.4H63.6"/>
+    <path pathLength="1" stroke-width="2.6" d="M33.6 40.4L36 66.5"/>
+    <path pathLength="1" stroke-width="2.6" d="M62.4 40.4L60 66.5"/>
+    <path pathLength="1" stroke-width="2.6" d="M35.4 48.2H60.6"/>
+    <path pathLength="1" stroke-width="1.8" d="M48 40.4V48.2"/>
+  </g>
+</svg></div>
+      <div class="portada-texto">
+        <h1 id="titulo">Cada serie levanta tu templo.</h1>
+        <p class="lema">Una app de entrenamiento con alma de dojo. Subes de rango por cada músculo, construyes tu casa, entrenas con Tenshi, tu maestro con IA, y compartes tu camino con el Clan.</p>
+        <div class="descarga">
+      <a class="boton boton-principal" data-apk href="#instalar" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5v11"/><path d="m7 10 5 5 5-5"/><path d="M4.5 16.5v2a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-2"/></svg><span class="texto-boton">Descargar para Android</span></a>
+      <div class="detalles-archivo" data-detalles><span>Versión 1.0.0</span><span>Android 7 o superior</span></div>
+    </div>
+        <a class="enlace-suave" href="#instalar">Cómo se instala, en cuatro pasos</a>
+        <p class="enlace-suave" data-web hidden>¿Tienes iPhone? <a href="#">Úsala desde el navegador</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="camino" aria-labelledby="t-camino">
+    <div class="contenedor">
+      <header>
+        <h2 id="t-camino">Cinco lugares, un solo camino</h2>
+        <p>No es una libreta de pesas. Cada entrenamiento se nota en tu rango, en tu casa y en tu Clan.</p>
+      </header>
+      <ul class="camino">
+        <li class="estacion">
+          <span class="kanji" lang="ja" aria-hidden="true">道場</span>
+          <div><h3>Dojo</h3><p>Tu día empieza aquí: el entrenamiento que toca, tus metas y lo que te falta para cerrar la semana. También rutinas para entrenar en casa, sin equipos.</p></div>
+        </li>
+        <li class="estacion">
+          <span class="kanji" lang="ja" aria-hidden="true">家</span>
+          <div><h3>Casa</h3><p>Cada kilo que levantas construye tu templo. Desbloqueas jardines, climas, interiores y un habitante que te acompaña.</p></div>
+        </li>
+        <li class="estacion">
+          <span class="kanji" lang="ja" aria-hidden="true">天使</span>
+          <div><h3>Tenshi</h3><p>Tu maestro con inteligencia artificial. Arma rutinas, revisa tu progreso, detecta estancamientos y te habla con calma.</p></div>
+        </li>
+        <li class="estacion">
+          <span class="kanji" lang="ja" aria-hidden="true">一族</span>
+          <div><h3>Clan</h3><p>Una comunidad solo de progreso: fotos, récords, rutinas y Respeto. Reportar y bloquear está siempre a un toque.</p></div>
+        </li>
+        <li class="estacion">
+          <span class="kanji" lang="ja" aria-hidden="true">段位</span>
+          <div><h3>Ranked</h3><p>Cada músculo tiene su nivel y su rango, de Ashigaru a Kami. Se sube entrenando bien, no pagando.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="seccion" aria-labelledby="t-ranked">
+    <div class="contenedor ranked">
+      <div class="texto">
+        <h2 id="t-ranked">Tus piernas pueden ser Kensei mientras tus brazos siguen siendo Samurái.</h2>
+        <p>Ranked mide cada grupo muscular por separado: volumen, peso máximo, frecuencia y técnica. Ves dónde vas fuerte y qué te está esperando.</p>
+        <p>El dorado se gana. Nadie compra un rango: ni con el Pase ni con anuncios.</p>
+      </div>
+      <figure style="margin:0">
+        <ol class="escalera" aria-label="Rangos, de menor a mayor">
+          <li><span class="sello" lang="ja" aria-hidden="true">足</span><small>Ashigaru</small></li>
+          <li><span class="sello" lang="ja" aria-hidden="true">浪</span><small>Rōnin</small></li>
+          <li><span class="sello" lang="ja" aria-hidden="true">侍</span><small>Samurái</small></li>
+          <li><span class="sello" lang="ja" aria-hidden="true">旗</span><small>Hatamoto</small></li>
+          <li><span class="sello" lang="ja" aria-hidden="true">大</span><small>Daimyō</small></li>
+          <li><span class="sello" lang="ja" aria-hidden="true">将</span><small>Shōgun</small></li>
+          <li><span class="sello" lang="ja" aria-hidden="true">剣</span><small>Kensei</small></li>
+          <li><span class="sello" lang="ja" aria-hidden="true">神</span><small>Kami</small></li>
+        </ol>
+        <ul class="musculos" aria-label="Ejemplo de rangos por músculo">
+          <li><span>Pecho</span><span class="barra"><span style="width:64%"></span></span><span class="rango">Hatamoto</span></li>
+          <li><span>Espalda</span><span class="barra"><span style="width:78%"></span></span><span class="rango">Daimyō</span></li>
+          <li><span>Piernas</span><span class="barra"><span style="width:92%"></span></span><span class="rango oro">Kensei</span></li>
+          <li><span>Hombros</span><span class="barra"><span style="width:46%"></span></span><span class="rango">Samurái</span></li>
+          <li><span>Bíceps</span><span class="barra"><span style="width:38%"></span></span><span class="rango">Samurái</span></li>
+          <li><span>Abdomen</span><span class="barra"><span style="width:24%"></span></span><span class="rango">Rōnin</span></li>
+        </ul>
+      </figure>
+    </div>
+  </section>
+
+  <section class="seccion" id="instalar" aria-labelledby="t-instalar">
+    <div class="contenedor">
+      <header>
+        <h2 id="t-instalar">Instálala en cuatro pasos</h2>
+        <p>La app todavía no está en Google Play, así que se instala desde aquí. Android te pedirá permiso porque no viene de la tienda: es normal con cualquier app instalada así.</p>
+      </header>
+      <ol class="pasos">
+        <li class="paso">
+          <h3>Descarga el archivo</h3>
+          <p>Toca «Descargar para Android». Si Chrome pregunta si quieres conservar el archivo, elige «Descargar de todos modos».</p>
+          <div class="pantalla" aria-hidden="true"><span>Este tipo de archivo puede dañar tu dispositivo. ¿Quieres descargar TempleOfStrength.apk?</span><span class="acciones"><span>Cancelar</span><span>Descargar de todos modos</span></span></div>
+        </li>
+        <li class="paso">
+          <h3>Ábrelo</h3>
+          <p>Cuando termine, toca «Abrir» en el aviso de descarga. Si lo cerraste, búscalo en la app Archivos, carpeta Descargas.</p>
+          <div class="pantalla" aria-hidden="true"><span>TempleOfStrength.apk se descargó</span><span class="acciones"><span>Abrir</span></span></div>
+        </li>
+        <li class="paso">
+          <h3>Permite la instalación</h3>
+          <p>Solo la primera vez: Android te lleva a Configuración. Activa «Permitir de esta fuente» y vuelve atrás.</p>
+          <div class="pantalla" aria-hidden="true"><span class="interruptor">Permitir de esta fuente <i></i></span></div>
+        </li>
+        <li class="paso">
+          <h3>Instala y entra</h3>
+          <p>Toca «Instalar». Si Play Protect pregunta, elige «Instalar de todos modos». Abre Temple of Strength y crea tu cuenta.</p>
+          <div class="pantalla" aria-hidden="true"><span>¿Quieres instalar esta app?</span><span class="acciones"><span>Cancelar</span><span>Instalar</span></span></div>
+        </li>
+      </ol>
+      <p class="nota-instalar">Para actualizar, descarga de nuevo e instala encima: no pierdes nada. Si después de instalar quieres quitar el permiso del paso 3, puedes hacerlo en Configuración, Apps, Acceso especial, Instalar apps desconocidas.</p>
+    </div>
+  </section>
+
+  <section class="seccion" id="seguridad" aria-labelledby="t-seguridad">
+    <div class="contenedor">
+      <header>
+        <h2 id="t-seguridad">Qué hace la app con tu teléfono</h2>
+        <p>Pide lo mínimo. Todo viaja cifrado y tu progreso es tuyo.</p>
+      </header>
+      <div class="seguridad">
+        <ul class="lista-segura">
+          <li style="display:block"><h3>Lo que usa</h3></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#5BD6A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><div>Internet<span>Para guardar tu progreso en la nube, el Clan y hablar con Tenshi. Siempre por conexión cifrada.</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#5BD6A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><div>Tus fotos o tu cámara, cuando tú lo eliges<span>Solo al subir una foto de perfil, de progreso o al Clan, con el selector de Android.</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#5BD6A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><div>Abrir enlaces<span>Para llevarte a las redes que alguien puso en su perfil, siempre con aviso antes de salir.</span></div></li>
+        </ul>
+        <ul class="lista-segura">
+          <li style="display:block"><h3>Lo que no hace</h3></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#9A93B0" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5"/></svg><div>No lee tus contactos, tu ubicación, tus mensajes ni tus llamadas.</div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#9A93B0" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5"/></svg><div>No vende tus datos ni los usa para publicidad de terceros.</div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#9A93B0" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5"/></svg><div>No muestra anuncios que salten solos. Las cuentas de menores no ven anuncios.</div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#9A93B0" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5"/></svg><div>No hace públicas tu meta ni tus fotos de progreso: son solo tuyas.</div></li>
+        </ul>
+      </div>
+      <div class="huella" id="huella" hidden>
+        <h3>Comprueba que el archivo es el original</h3>
+        <p>Esta es la huella SHA-256 del APK publicado. Si la de tu archivo coincide, es exactamente el que subimos.</p>
+        <code>—</code>
+        <button class="copiar" type="button" data-copiar>Copiar huella</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" aria-labelledby="t-preguntas">
+    <div class="contenedor">
+      <header><h2 id="t-preguntas">Preguntas</h2></header>
+      <div class="preguntas">
+      <details><summary>¿Cuánto cuesta?</summary><p>Nada. Entrenar, las rutinas, Ranked, el Clan, la Casa y el Taller son gratis. El Pase del Templo es opcional y llegará cuando la app esté en Google Play.</p></details>
+      <details><summary>¿Por qué no está en Google Play todavía?</summary><p>Estamos en camino. Mientras tanto la puedes instalar desde aquí. Cuando llegue a la tienda te avisaremos dentro de la app, y tu cuenta y tu progreso siguen siendo los mismos.</p></details>
+      <details><summary>¿Por qué Android me muestra un aviso al instalar?</summary><p>Android avisa con cualquier app que no viene de Google Play, sea cual sea. Es su forma de pedirte permiso. Basta con aceptarlo una vez para el navegador desde el que descargaste.</p></details>
+      <details><summary>¿Funciona en iPhone?</summary><p>Todavía no hay versión para la App Store. Cuando la publiquemos en la web, el enlace aparecerá debajo del botón de descarga.</p></details>
+      <details><summary>¿Cómo actualizo la app?</summary><p>Descarga de nuevo desde esta página e instala encima. No hace falta desinstalar: tu sesión y tus datos se conservan.</p></details>
+      <details><summary>¿Pierdo mi progreso si cambio de teléfono?</summary><p>No. Tu progreso se guarda en tu teléfono y en la nube. Entra con tu usuario en el teléfono nuevo y aparece todo.</p></details>
+      <details><summary>¿Hay edad mínima?</summary><p>Sí, 13 años. Entre 13 y 17 hace falta la autorización de tu madre, padre o tutor. Las cuentas de menores usan un Clan separado del de los adultos y no ven anuncios.</p></details>
+      <details><summary>¿Hay anuncios?</summary><p>Solo si tú eliges verlos, a cambio de mon u otra recompensa. Ningún anuncio aparece solo ni interrumpe tu entrenamiento.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" aria-labelledby="t-cierre">
+    <div class="contenedor cierre">
+      <svg class="mini" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="h3"><stop offset="0" stop-color="#8B5CF6" stop-opacity=".34"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="l3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F1FA"/><stop offset="1" stop-color="#B79CFF"/></linearGradient>
+    <mask id="m3" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><circle cx="62.6" cy="45.8" r="37.8" fill="#000"/></mask>
+  </defs>
+  <circle class="halo" cx="50" cy="50" r="79.8" fill="url(#h3)"/>
+  <g class="creciente"><circle cx="50" cy="50" r="42" fill="url(#l3)" mask="url(#m3)"/></g>
+  <g class="torii" fill="none" stroke="#B79CFF" stroke-linecap="round">
+    <path pathLength="1" stroke-width="3.4" d="M29.4 36.2Q48 31.4 66.6 36.2"/>
+    <path pathLength="1" stroke-width="2.6" d="M32.4 40.4H63.6"/>
+    <path pathLength="1" stroke-width="2.6" d="M33.6 40.4L36 66.5"/>
+    <path pathLength="1" stroke-width="2.6" d="M62.4 40.4L60 66.5"/>
+    <path pathLength="1" stroke-width="2.6" d="M35.4 48.2H60.6"/>
+    <path pathLength="1" stroke-width="1.8" d="M48 40.4V48.2"/>
+  </g>
+</svg>
+      <h2 id="t-cierre">Tu primer entrenamiento empieza a levantar el templo.</h2>
+      <div class="descarga">
+      <a class="boton boton-principal" data-apk href="#instalar" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5v11"/><path d="m7 10 5 5 5-5"/><path d="M4.5 16.5v2a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-2"/></svg><span class="texto-boton">Descargar para Android</span></a>
+      <div class="detalles-archivo" data-detalles><span>Versión 1.0.0</span><span>Android 7 o superior</span></div>
+    </div>
+    </div>
+  </section>
+</main>
+<footer class="pie">
+  <div class="contenedor">
+    <p>© <span data-anio>2026</span> Temple of Strength. Hecho en Colombia.</p>
+    <nav aria-label="Legal">
+      <a href="privacidad.html">Privacidad</a>
+      <a href="terminos.html">Términos y reglamento</a>
+      <a href="eliminar-cuenta.html">Eliminar tu cuenta</a>
+      <a data-correo data-texto-fijo href="mailto:temple-of-strength@outlook.com">Contacto</a>
+    </nav>
+  </div>
+</footer>
+<script src="config.js"></script>
+<script src="js/templo.js"></script>
+</body>
+</html>
