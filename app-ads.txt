@@ -1,2 +1,1 @@
-# Temple of Strength
-# Cuando AdMob apruebe la app, pega aquí la línea que te da AdMob (Apps > app-ads.txt).
+google.com, pub-5820713173422762, DIRECT, f08c47fec0942fa0
