@@ -6,7 +6,9 @@
 
   // -- Datos de config.js ---------------------------------------------------
   function rellenar() {
-    var listo = C.apk && C.apk.indexOf('ssguerrerotenjiro-cyber') === -1;
+    // Solo se desactiva si el enlace sigue con el texto de ejemplo de la guía.
+    var ejemplo = 'TU_' + 'USUARIO';
+    var listo = !!C.apk && C.apk.indexOf(ejemplo) === -1;
     document.querySelectorAll('[data-apk]').forEach(function (a) {
       if (listo) {
         a.href = C.apk;
