@@ -60,6 +60,26 @@
       }
     });
     document.querySelectorAll('[data-sin-web]').forEach(function (el) { el.hidden = !!C.web; });
+    // En iPhone no hay APK: el botón principal abre la versión web.
+    var ua = navigator.userAgent || '';
+    var iphone = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (iphone && C.web) {
+      document.querySelectorAll('[data-apk]').forEach(function (a) {
+        a.href = C.web;
+        a.removeAttribute('download');
+        a.removeAttribute('aria-disabled');
+        var t = a.querySelector('.texto-boton');
+        if (t) t.textContent = 'Abrir la versión web';
+        var icono = a.querySelector('svg');
+        if (icono) icono.innerHTML = '<path d="M14 4.5h5.5V10"/><path d="M19.5 4.5 11 13"/><path d="M18 13.5v4a2 2 0 0 1-2 2H6.5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/>';
+      });
+      document.querySelectorAll('[data-detalles]').forEach(function (el) {
+        el.innerHTML = '<span>Para iPhone, en Safari</span><span>App Store muy pronto</span>';
+      });
+      document.querySelectorAll('[data-web]').forEach(function (el) {
+        el.textContent = 'En Safari, toca Compartir y luego «Agregar a inicio» para tenerla como app.';
+      });
+    }
     document.querySelectorAll('[data-anio]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
   }
 

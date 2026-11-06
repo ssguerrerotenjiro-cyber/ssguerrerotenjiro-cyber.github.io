@@ -19,7 +19,7 @@ window.TEMPLO = {
   sha256: 'cf8bd32557e54f24ee1e10be1f3bf7236e7daf04f58f43960af24182056395c7',
 
   // Enlace a la versión web, si la publicas (para iPhone). Vacío = no se muestra.
-  web: '',
+  web: 'https://ssguerrerotenjiro-cyber.github.io/app/',
 
   // Contacto y responsable de los datos (aparecen en las páginas legales).
   correo: 'temple-of-strength@outlook.com',
