@@ -298,3 +298,101 @@ p { margin: 0; max-width: 64ch; }
 .musculos .rango { text-align: right; }
 .marca .halo { display: none; }
 .estacion .kanji { white-space: nowrap; }
+
+/* -- Temas de color ----------------------------------------------------------
+   Los mismos de la app (Apariencia). Tradicional no tiene atributo: usa los
+   valores de :root y se ve exactamente como siempre. js/tema.js pone
+   data-tema en <html> antes de pintar. */
+
+.l-a { stop-color: var(--luna); }
+.l-b { stop-color: var(--lila); }
+.h-a { stop-color: var(--violeta); }
+.n-c { stop-color: var(--noche); }
+.torii { stroke: var(--lila); }
+.montanas .m1 { fill: var(--monte1, #1B1233); }
+.montanas .m2 { fill: var(--monte2, #110B20); }
+.montanas .m3 { fill: var(--noche); }
+
+[data-tema="oscuro"] {
+  --noche: #0B0B0D; --tinta: #121214; --superficie: #18181B; --superficie-alta: #202024; --borde: #2C2C31;
+  --borde-vivo: #3D3D44; --morado: #2A2440; --violeta: #8B5CF6; --lila: #B9A4F7; --luna: #F4F4F6;
+  --texto: #E4E4E8; --suave: #9A9AA4; --tenue: #6B6B75; --monte1: #1C1C22; --monte2: #121215;
+}
+[data-tema="claro"] {
+  --noche: #F6F3FA; --tinta: #EEE8F6; --superficie: #FFFFFF; --superficie-alta: #F3EEFA; --borde: #E2D9EF;
+  --borde-vivo: #C9BBE4; --morado: #E9DFFC; --violeta: #6D3FE0; --lila: #5932C4; --luna: #1A1526;
+  --texto: #2A2437; --suave: #5E5671; --tenue: #8C849F; --oro: #A2721A; --sakura: #C9487F;
+  --monte1: #DCD1EE; --monte2: #E9E1F5;
+  color-scheme: light;
+}
+[data-tema="sakura"] {
+  --noche: #0A0609; --tinta: #130B11; --superficie: #1A1017; --superficie-alta: #23161F; --borde: #33212D;
+  --borde-vivo: #4B2E41; --morado: #45203A; --violeta: #D9508A; --lila: #F4A6C6; --luna: #FBF1F6;
+  --texto: #F0E3EA; --suave: #B0949F; --tenue: #7A5E6A; --monte1: #2E1226; --monte2: #1A0912;
+}
+[data-tema="jade"] {
+  --noche: #050A09; --tinta: #0B1311; --superficie: #0F1A17; --superficie-alta: #15231F; --borde: #1F332D;
+  --borde-vivo: #2D4A41; --morado: #12392E; --violeta: #1E9E74; --lila: #7FDDBB; --luna: #EEF8F4;
+  --texto: #DCEDE7; --suave: #8EA89F; --tenue: #58726A; --monte1: #0F2A23; --monte2: #08150F;
+}
+[data-tema="oceano"] {
+  --noche: #04070D; --tinta: #0A111D; --superficie: #0E1726; --superficie-alta: #141F33; --borde: #1E2B44;
+  --borde-vivo: #2B3D60; --morado: #142856; --violeta: #3D7BEF; --lila: #9BBCFF; --luna: #F0F5FF;
+  --texto: #DFE7F5; --suave: #8F9CB5; --tenue: #5A6680; --monte1: #12224A; --monte2: #0A1330;
+}
+[data-tema="carmesi"] {
+  --noche: #0B0506; --tinta: #150A0C; --superficie: #1C0F12; --superficie-alta: #261519; --borde: #391F25;
+  --borde-vivo: #532B34; --morado: #4A1620; --violeta: #D23F4C; --lila: #F2A0A6; --luna: #FBF0F1;
+  --texto: #F0E1E3; --suave: #B0959A; --tenue: #7A5E63; --monte1: #33101A; --monte2: #1C080D;
+}
+
+/* Lo que en Tradicional tiene el violeta escrito a mano. */
+[data-tema] .portada {
+  background:
+    radial-gradient(ellipse 70% 55% at 72% 38%, color-mix(in srgb, var(--violeta) 22%, transparent), transparent 70%),
+    radial-gradient(ellipse 120% 70% at 50% 120%, color-mix(in srgb, var(--morado) 90%, transparent), transparent 70%),
+    var(--noche);
+}
+[data-tema] .boton-principal {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--violeta) 82%, #fff), var(--violeta) 55%, color-mix(in srgb, var(--violeta) 86%, #000));
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12) inset, 0 10px 36px -8px color-mix(in srgb, var(--violeta) 75%, transparent);
+}
+[data-tema] .boton-principal:hover {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18) inset, 0 14px 44px -8px color-mix(in srgb, var(--violeta) 90%, transparent);
+}
+[data-tema] .escalera li:nth-child(n+4) .sello { border-color: var(--borde-vivo); background: linear-gradient(180deg, var(--superficie-alta), var(--superficie)); }
+[data-tema] .huella { border-color: var(--borde-vivo); }
+[data-tema="claro"] .estrellas { display: none; }
+[data-tema="claro"] .escalera li:nth-child(n+7) .sello { background: linear-gradient(180deg, #FBF1DE, #F3E3C2); }
+
+/* Selector de tema en la cabecera. */
+.tema { position: relative; }
+.cabecera .contenedor > .tema { margin-left: auto; }
+.cabecera nav + .tema { margin-left: 0; }
+.cabecera-acciones { display: flex; align-items: center; gap: 1.2rem; }
+.boton-tema {
+  display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  border: 1px solid var(--borde); background: color-mix(in srgb, var(--superficie) 70%, transparent);
+  color: var(--suave); cursor: pointer; padding: 0;
+}
+.boton-tema:hover, .boton-tema[aria-expanded="true"] { color: var(--luna); border-color: var(--violeta); }
+.boton-tema svg { width: 1.2rem; height: 1.2rem; }
+.menu-tema {
+  position: absolute; right: 0; top: calc(100% + 0.6rem); z-index: 40; width: 15rem;
+  padding: 0.75rem; border-radius: 1rem; border: 1px solid var(--borde); background: var(--superficie);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35); display: grid; gap: 0.25rem;
+}
+.menu-tema[hidden] { display: none; }
+.menu-tema p { font-size: 0.78rem; color: var(--tenue); margin: 0 0 0.35rem 0.35rem; line-height: 1.35; }
+.menu-tema button {
+  display: flex; align-items: center; gap: 0.7rem; width: 100%; text-align: left;
+  padding: 0.5rem 0.55rem; border-radius: 0.6rem; border: 0; background: none;
+  color: var(--texto); font: inherit; font-size: 0.95rem; cursor: pointer;
+}
+.menu-tema button:hover { background: var(--tinta); }
+.menu-tema button[aria-pressed="true"] { background: color-mix(in srgb, var(--violeta) 16%, transparent); color: var(--luna); font-weight: 500; }
+.menu-tema .muestra {
+  width: 1.35rem; height: 1.35rem; border-radius: 50%; flex: none; border: 1px solid var(--borde);
+  background: linear-gradient(135deg, var(--a) 50%, var(--b) 50%);
+}
+.cabecera .contenedor > nav { margin-left: auto; }

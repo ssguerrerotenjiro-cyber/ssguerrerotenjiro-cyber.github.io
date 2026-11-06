@@ -6,6 +6,7 @@
 <title>Términos y reglamento · Temple of Strength</title>
 <meta name="description" content="Términos de uso, reglamento del Clan, el Pase del Templo, anuncios y política de datos de Temple of Strength.">
 <meta name="theme-color" content="#06050A">
+<script src="js/tema.js?v=20261106c"></script>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
@@ -19,15 +20,15 @@
 <link rel="icon" href="img/icono-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preload" href="fuentes/serif-300.woff" as="font" type="font/woff" crossorigin>
-<link rel="stylesheet" href="css/templo.css">
+<link rel="stylesheet" href="css/templo.css?v=20261106c">
 </head>
 <body>
 <header class="legal-cabecera">
   <div class="contenedor">
     <a class="marca" href="./"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
   <defs>
-    <radialGradient id="h5"><stop offset="0" stop-color="#8B5CF6" stop-opacity=".34"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
-    <linearGradient id="l5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F1FA"/><stop offset="1" stop-color="#B79CFF"/></linearGradient>
+    <radialGradient id="h5"><stop class="h-a" offset="0" stop-color="#8B5CF6" stop-opacity=".34"/><stop class="h-a" offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="l5" x1="0" y1="0" x2="1" y2="1"><stop class="l-a" offset="0" stop-color="#F4F1FA"/><stop class="l-b" offset="1" stop-color="#B79CFF"/></linearGradient>
     <mask id="m5" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><circle cx="62.6" cy="45.8" r="37.8" fill="#000"/></mask>
   </defs>
   <circle class="halo" cx="50" cy="50" r="79.8" fill="url(#h5)"/>
@@ -41,7 +42,23 @@
     <path pathLength="1" stroke-width="1.8" d="M48 40.4V48.2"/>
   </g>
 </svg>Temple of Strength</a>
-    <a class="volver" href="./">Volver al inicio</a>
+    <div class="cabecera-acciones">
+      <a class="volver" href="./">Volver al inicio</a>
+      <div class="tema">
+        <button class="boton-tema" type="button" data-boton-tema aria-expanded="false" aria-controls="menu-tema" aria-label="Tema de color" title="Tema de color"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.9 1.7-1.8 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-1 .8-1.8 1.8-1.8H16a5 5 0 0 0 5-5C21 6.4 17 3 12 3Z"/><circle cx="7.5" cy="11" r="1.1"/><circle cx="10.5" cy="7" r="1.1"/><circle cx="15" cy="7.4" r="1.1"/></svg></button>
+        <div class="menu-tema" id="menu-tema" data-menu-tema hidden role="group" aria-label="Tema de color">
+          <p>Tema de color · también se usa en la versión web</p>
+          <button type="button" data-elegir-tema="tradicional" aria-pressed="false"><span class="muestra" style="--a:#06050A;--b:#8B5CF6"></span>Tradicional</button>
+          <button type="button" data-elegir-tema="oscuro" aria-pressed="false"><span class="muestra" style="--a:#0B0B0D;--b:#8B5CF6"></span>Oscuro</button>
+          <button type="button" data-elegir-tema="claro" aria-pressed="false"><span class="muestra" style="--a:#F6F3FA;--b:#6D3FE0"></span>Claro</button>
+          <button type="button" data-elegir-tema="sakura" aria-pressed="false"><span class="muestra" style="--a:#0A0609;--b:#D9508A"></span>Sakura</button>
+          <button type="button" data-elegir-tema="jade" aria-pressed="false"><span class="muestra" style="--a:#050A09;--b:#1E9E74"></span>Jade</button>
+          <button type="button" data-elegir-tema="oceano" aria-pressed="false"><span class="muestra" style="--a:#04070D;--b:#3D7BEF"></span>Océano</button>
+          <button type="button" data-elegir-tema="carmesi" aria-pressed="false"><span class="muestra" style="--a:#0B0506;--b:#D23F4C"></span>Carmesí</button>
+          <button type="button" data-elegir-tema="automatico" aria-pressed="false"><span class="muestra" style="--a:#F6F3FA;--b:#06050A"></span>Automático</button>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 <main class="legal">
@@ -247,7 +264,7 @@
     </nav>
   </div>
 </footer>
-<script src="config.js?v=20261106a"></script>
-<script src="js/templo.js?v=20261106a"></script>
+<script src="config.js?v=20261106c"></script>
+<script src="js/templo.js?v=20261106c"></script>
 </body>
 </html>

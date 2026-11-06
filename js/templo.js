@@ -189,4 +189,31 @@
   rellenar();
   copiarHuella();
   petalos();
+  // Tema de color: el selector de la cabecera (el tema lo aplica js/tema.js).
+  (function () {
+    var boton = document.querySelector('[data-boton-tema]');
+    var menu = document.querySelector('[data-menu-tema]');
+    if (!boton || !menu || !window.TemploTema) return;
+    var opciones = menu.querySelectorAll('[data-elegir-tema]');
+    function marcar() {
+      var actual = window.TemploTema.eleccion();
+      for (var i = 0; i < opciones.length; i++) {
+        opciones[i].setAttribute('aria-pressed', String(opciones[i].getAttribute('data-elegir-tema') === actual));
+      }
+    }
+    function abrir(si) {
+      menu.hidden = !si;
+      boton.setAttribute('aria-expanded', String(si));
+    }
+    boton.addEventListener('click', function (ev) { ev.stopPropagation(); marcar(); abrir(menu.hidden); });
+    for (var i = 0; i < opciones.length; i++) {
+      opciones[i].addEventListener('click', function (ev) {
+        window.TemploTema.elegir(ev.currentTarget.getAttribute('data-elegir-tema'));
+        marcar();
+      });
+    }
+    document.addEventListener('click', function (ev) { if (!menu.hidden && !menu.contains(ev.target)) abrir(false); });
+    document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && !menu.hidden) { abrir(false); boton.focus(); } });
+    marcar();
+  })();
 })();
