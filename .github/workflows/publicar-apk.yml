@@ -1,0 +1,33 @@
+name: Publicar APK
+
+# La rama «descargas» trae el APK firmado y su ficha (apk-info.json).
+# Este paso lo publica como Release; la página enlaza siempre a la última.
+on:
+  push:
+    branches: [descargas]
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: descargas
+      - name: Crear Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(python3 -c "import json;print(json.load(open('apk-info.json'))['version'])")
+          BUILD=$(python3 -c "import json;print(json.load(open('apk-info.json'))['build'])")
+          TAG="v${VERSION}-${BUILD}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "La versión $TAG ya estaba publicada."
+            exit 0
+          fi
+          gh release create "$TAG" TempleOfStrength.apk apk-info.json \
+            --title "Temple of Strength ${VERSION}" \
+            --notes "Descarga TempleOfStrength.apk e instálalo en tu Android. Instrucciones en https://${{ github.repository_owner }}.github.io/#instalar" \
+            --latest
