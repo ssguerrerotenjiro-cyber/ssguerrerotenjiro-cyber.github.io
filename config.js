@@ -11,12 +11,12 @@ window.TEMPLO = {
   apk: 'https://github.com/ssguerrerotenjiro-cyber/ssguerrerotenjiro-cyber.github.io/releases/latest/download/TempleOfStrength.apk',
 
   // Datos que se muestran debajo del botón de descarga.
-  version: '1.6.0',
-  tamano: '71 MB',            // por ejemplo: '48 MB'. Vacío = no se muestra.
+  version: '1.7.0',
+  tamano: '75 MB',            // por ejemplo: '48 MB'. Vacío = no se muestra.
   android: 'Android 7 o superior',
 
   // Huella SHA-256 del APK (ver la guía). Vacío = no se muestra.
-  sha256: 'ecf63cda0bd94833a15930e951ca4919278c7e5c557a673c71623e9c1f38f483',
+  sha256: '1cdcae76801b8862f7f4d23f256acb429bee2c4cab3453e55b1675389f7ee2a7',
 
   // Enlace a la versión web, si la publicas (para iPhone). Vacío = no se muestra.
   web: 'https://ssguerrerotenjiro-cyber.github.io/app/',
