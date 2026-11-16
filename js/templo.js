@@ -180,7 +180,7 @@
     }
     var inicio = performance.now();
     function cuadro(ahora) {
-      if (visible && !document.hidden) pintar(3 + (ahora - inicio) / 1000);
+      if (visible && !document.hidden && !document.documentElement.classList.contains('quieto')) pintar(3 + (ahora - inicio) / 1000);
       requestAnimationFrame(cuadro);
     }
     requestAnimationFrame(cuadro);

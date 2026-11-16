@@ -6,7 +6,7 @@
 <title>Temple of Strength: entrena y levanta tu templo</title>
 <meta name="description" content="App gratis de entrenamiento con alma de dojo: rangos por músculo, un maestro con IA, tu propio templo y un Clan de progreso. Descárgala para Android.">
 <meta name="theme-color" content="#06050A">
-<script src="js/tema.js?v=20261113a"></script>
+<script src="js/tema.js?v=20261116a"></script>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
 <link rel="icon" href="img/icono-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preload" href="fuentes/serif-300.woff" as="font" type="font/woff" crossorigin>
-<link rel="stylesheet" href="css/templo.css?v=20261113a">
+<link rel="stylesheet" href="css/templo.css?v=20261116a">
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -68,6 +68,8 @@
 
 <main id="contenido">
   <section class="portada" aria-labelledby="titulo">
+    <canvas class="cielo3d" aria-hidden="true"></canvas>
+    <div class="velo" aria-hidden="true"></div>
     <div class="estrellas" aria-hidden="true"></div>
     <canvas class="petalos" aria-hidden="true"></canvas>
     <svg class="montanas" viewBox="0 0 1440 340" preserveAspectRatio="none" aria-hidden="true">
@@ -111,92 +113,183 @@
         <p class="enlace-suave" data-web hidden>¿Tienes iPhone o estás en el computador? <a href="#">Úsala en el navegador</a></p>
       </div>
     </div>
+    <button class="pausa" type="button" data-pausa aria-pressed="false" aria-label="Pausar la animación" title="Pausar la animación"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pausa" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-play" d="M8 5.5v13l11-6.5z"/></svg><span class="texto-pausa">Pausar</span></button>
+    <a class="bajar" href="#camino" aria-label="Ver más"><span></span></a>
   </section>
 
   <section class="seccion" id="camino" aria-labelledby="t-camino">
     <div class="contenedor">
-      <header>
+      <header data-revela>
         <h2 id="t-camino">Cinco lugares, un solo camino</h2>
         <p>No es una libreta de pesas. Cada entrenamiento se nota en tu rango, en tu casa y en tu Clan.</p>
       </header>
       <ul class="camino">
-        <li class="estacion">
+        <li class="estacion" data-revela style="--i:0">
           <span class="kanji" lang="ja" aria-hidden="true">道場</span>
-          <div><h3>Dojo</h3><p>Tu día empieza aquí: el entrenamiento que toca, tus metas y lo que te falta para cerrar la semana. Con el Camino del día ves en un mapa en vivo dónde estás y cuentas tus pasos, kilómetros y calorías. También rutinas para entrenar en casa, sin equipos.</p></div>
+          <div><h3>Dojo</h3><p>Tu día empieza aquí: el entrenamiento que toca, tus metas y lo que te falta para cerrar la semana. Con el Camino del día ves en un mapa en vivo dónde estás y cuentas tus pasos, kilómetros y calorías. También rutinas para entrenar en casa, sin equipos.</p><div class="pieza" aria-hidden="true"><div class="fila"><span>Aprendiz</span><small>Nivel 4 · 860 / 1.000 XP</small></div><div class="barrita"><i data-llena="0.86"></i></div></div></div>
         </li>
-        <li class="estacion">
+        <li class="estacion" data-revela style="--i:1">
           <span class="kanji" lang="ja" aria-hidden="true">家</span>
-          <div><h3>Casa</h3><p>Cada kilo que levantas construye tu templo. Desbloqueas jardines, climas, interiores y un habitante que te acompaña.</p></div>
+          <div><h3>Casa</h3><p>Cada kilo que levantas construye tu templo. Desbloqueas jardines, climas, interiores y un habitante que te acompaña.</p><div class="pieza" aria-hidden="true"><div class="fila"><span>Piezas levantadas</span></div><div class="fichas"><span style="--i:0">El sendero</span><span style="--i:1">El torii</span><span class="oro" style="--i:2">El estanque</span></div></div></div>
         </li>
-        <li class="estacion">
+        <li class="estacion" data-revela style="--i:2">
           <span class="kanji" lang="ja" aria-hidden="true">天使</span>
-          <div><h3>Tenshi</h3><p>Tu maestro con inteligencia artificial. Arma rutinas, revisa tu progreso, detecta estancamientos y te habla con calma.</p></div>
+          <div><h3>Tenshi</h3><p>Tu maestro con inteligencia artificial. Arma rutinas, revisa tu progreso, detecta estancamientos y te habla con calma.</p><div class="pieza voz" aria-hidden="true"><span class="sello-voz" lang="ja">天</span><p data-escribe="Hoy toca espalda. Sube 2,5 kg en el remo: estás listo." data-retraso="300">Hoy toca espalda. Sube 2,5 kg en el remo: estás listo.</p></div></div>
         </li>
-        <li class="estacion">
+        <li class="estacion" data-revela style="--i:3">
           <span class="kanji" lang="ja" aria-hidden="true">一族</span>
-          <div><h3>Clan</h3><p>Una comunidad solo de progreso: fotos, récords, rutinas y Respeto. Funda tu clan, únete a tu gym, cumple retos y reporta o bloquea en un toque.</p></div>
+          <div><h3>Clan</h3><p>Una comunidad solo de progreso: fotos, récords, rutinas y Respeto. Funda tu clan, únete a tu gym, cumple retos y reporta o bloquea en un toque.</p><div class="pieza" aria-hidden="true"><div class="fila"><span>Kenji rompió su récord</span><small>Sentadilla · 120 kg</small></div><div class="fichas"><span style="--i:0"><b data-cuenta="48" data-retraso="200">48</b> Respetos</span><span style="--i:1">Reto del clan: 3 de 4</span></div></div></div>
         </li>
-        <li class="estacion">
+        <li class="estacion" data-revela style="--i:4">
           <span class="kanji" lang="ja" aria-hidden="true">段位</span>
-          <div><h3>Ranked</h3><p>Cada músculo tiene su nivel y su rango, de Ashigaru a Kami. Se sube entrenando bien, no pagando.</p></div>
+          <div><h3>Ranked</h3><p>Cada músculo tiene su nivel y su rango, de Ashigaru a Kami. Se sube entrenando bien, no pagando.</p><div class="pieza tres" aria-hidden="true"><div><div class="fila"><span>Pecho</span><small>Hatamoto</small></div><div class="barrita"><i data-llena="0.64"></i></div></div><div><div class="fila"><span>Espalda</span><small>Daimyō</small></div><div class="barrita"><i data-llena="0.78"></i></div></div><div><div class="fila"><span>Piernas</span><small class="oro">Kensei</small></div><div class="barrita oro"><i data-llena="0.92"></i></div></div></div></div>
         </li>
       </ul>
     </div>
   </section>
 
+  <section class="seccion" id="capturas" aria-labelledby="t-capturas">
+    <div class="contenedor">
+      <header data-revela>
+        <h2 id="t-capturas">Así se ve por dentro</h2>
+        <p>Pantallas reales de la app, con una cuenta de ejemplo. Desliza para verlas.</p>
+      </header>
+      <div class="carrusel" data-carrusel data-revela>
+        <ul class="pista" tabindex="0" aria-label="Capturas de la app">
+          <li><figure><div class="telefono"><img src="img/app/dojo.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Captura de la app: Dojo"></div><figcaption><b>Dojo</b>Tu día: la sesión que toca, tu disposición y tus metas.</figcaption></figure></li>
+          <li><figure><div class="telefono"><img src="img/app/entreno.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Captura de la app: Entrenar"></div><figcaption><b>Entrenar</b>Cada serie con su peso; la app te dice si toca subir.</figcaption></figure></li>
+          <li><figure><div class="telefono"><img src="img/app/tenshi.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Captura de la app: Tenshi"></div><figcaption><b>Tenshi</b>Tu maestro con IA sabe tu nivel, tu racha y cómo vienes.</figcaption></figure></li>
+          <li><figure><div class="telefono"><img src="img/app/casa.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Captura de la app: Casa"></div><figcaption><b>Casa</b>Tu templo, con las piezas que levantaste.</figcaption></figure></li>
+          <li><figure><div class="telefono"><img src="img/app/ranked.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Captura de la app: Ranked"></div><figcaption><b>Ranked</b>Tu cuerpo por rangos: cada músculo con su color.</figcaption></figure></li>
+          <li><figure><div class="telefono"><img src="img/app/musculo.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Captura de la app: Un músculo"></div><figcaption><b>Un músculo</b>Su rango, su honor y su pronóstico de ascenso.</figcaption></figure></li>
+          <li><figure><div class="telefono"><img src="img/app/ceremonia.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Captura de la app: Al terminar"></div><figcaption><b>Al terminar</b>La ceremonia: XP, récords, rango nuevo y tu semana.</figcaption></figure></li>
+        </ul>
+        <div class="controles">
+          <button type="button" class="flecha" data-ant aria-label="Captura anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg></button>
+          <div class="puntos"></div>
+          <button type="button" class="flecha" data-sig aria-label="Captura siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="seccion" aria-labelledby="t-ranked">
     <div class="contenedor ranked">
-      <div class="texto">
+      <div class="texto" data-revela>
         <h2 id="t-ranked">Tus piernas pueden ser Kensei mientras tus brazos siguen siendo Samurái.</h2>
         <p>Ranked mide cada grupo muscular por separado: volumen, peso máximo, frecuencia y técnica. Ves dónde vas fuerte y qué te está esperando.</p>
+        <p>Tu cuerpo, de hombre o de mujer, se enciende con el color de cada rango. Cuanto más alto, más vivo: brasas, llamas, rayos y, en Kami, un aro de luz.</p>
         <p>El dorado se gana. Nadie compra un rango: ni con el Pase ni con anuncios.</p>
       </div>
-      <figure style="margin:0">
+      <figure class="cuerpo" data-cuerpo data-revela>
+        <div class="cuerpo-marco"><img src="img/app/cuerpo-h.webp" width="480" height="1024" loading="lazy" decoding="async" alt="Cuerpo de hombre de Ranked, cada músculo con el color de su rango"></div>
+        <div class="cuerpo-elegir" role="group" aria-label="Cuerpo">
+          <button type="button" data-genero="h" aria-pressed="true">Hombre</button>
+          <button type="button" data-genero="m" aria-pressed="false">Mujer</button>
+        </div>
+      </figure>
+      <figure class="rangos-fig" data-revela>
         <ol class="escalera" aria-label="Rangos, de menor a mayor">
-          <li><span class="sello" lang="ja" aria-hidden="true">足</span><small>Ashigaru</small></li>
-          <li><span class="sello" lang="ja" aria-hidden="true">浪</span><small>Rōnin</small></li>
-          <li><span class="sello" lang="ja" aria-hidden="true">侍</span><small>Samurái</small></li>
-          <li><span class="sello" lang="ja" aria-hidden="true">旗</span><small>Hatamoto</small></li>
-          <li><span class="sello" lang="ja" aria-hidden="true">大</span><small>Daimyō</small></li>
-          <li><span class="sello" lang="ja" aria-hidden="true">将</span><small>Shōgun</small></li>
-          <li><span class="sello" lang="ja" aria-hidden="true">剣</span><small>Kensei</small></li>
-          <li><span class="sello" lang="ja" aria-hidden="true">神</span><small>Kami</small></li>
+          <li style="--i:0"><span class="sello" lang="ja" aria-hidden="true">足</span><small>Ashigaru</small></li>
+          <li style="--i:1"><span class="sello" lang="ja" aria-hidden="true">浪</span><small>Rōnin</small></li>
+          <li style="--i:2"><span class="sello" lang="ja" aria-hidden="true">侍</span><small>Samurái</small></li>
+          <li style="--i:3"><span class="sello" lang="ja" aria-hidden="true">旗</span><small>Hatamoto</small></li>
+          <li style="--i:4"><span class="sello" lang="ja" aria-hidden="true">大</span><small>Daimyō</small></li>
+          <li style="--i:5"><span class="sello" lang="ja" aria-hidden="true">将</span><small>Shōgun</small></li>
+          <li style="--i:6"><span class="sello" lang="ja" aria-hidden="true">剣</span><small>Kensei</small></li>
+          <li style="--i:7"><span class="sello" lang="ja" aria-hidden="true">神</span><small>Kami</small></li>
         </ol>
         <ul class="musculos" aria-label="Ejemplo de rangos por músculo">
-          <li><span>Pecho</span><span class="barra"><span style="width:64%"></span></span><span class="rango">Hatamoto</span></li>
-          <li><span>Espalda</span><span class="barra"><span style="width:78%"></span></span><span class="rango">Daimyō</span></li>
-          <li><span>Piernas</span><span class="barra"><span style="width:92%"></span></span><span class="rango oro">Kensei</span></li>
-          <li><span>Hombros</span><span class="barra"><span style="width:46%"></span></span><span class="rango">Samurái</span></li>
-          <li><span>Bíceps</span><span class="barra"><span style="width:38%"></span></span><span class="rango">Samurái</span></li>
-          <li><span>Abdomen</span><span class="barra"><span style="width:24%"></span></span><span class="rango">Rōnin</span></li>
+          <li style="--i:0"><span>Pecho</span><span class="barra"><span data-llena="0.64" style="width:64%"></span></span><span class="rango">Hatamoto</span></li>
+          <li style="--i:1"><span>Espalda</span><span class="barra"><span data-llena="0.78" style="width:78%"></span></span><span class="rango">Daimyō</span></li>
+          <li style="--i:2"><span>Piernas</span><span class="barra"><span data-llena="0.92" style="width:92%"></span></span><span class="rango oro">Kensei</span></li>
+          <li style="--i:3"><span>Hombros</span><span class="barra"><span data-llena="0.46" style="width:46%"></span></span><span class="rango">Samurái</span></li>
+          <li style="--i:4"><span>Bíceps</span><span class="barra"><span data-llena="0.38" style="width:38%"></span></span><span class="rango">Samurái</span></li>
+          <li style="--i:5"><span>Abdomen</span><span class="barra"><span data-llena="0.24" style="width:24%"></span></span><span class="rango">Rōnin</span></li>
         </ul>
       </figure>
     </div>
   </section>
 
+  <section class="seccion" id="templo" aria-labelledby="t-templo">
+    <div class="contenedor templo">
+      <div class="texto" data-revela>
+        <h2 id="t-templo">Cada kilo levanta una pieza.</h2>
+        <p>Lo que levantas se suma al peso de tu templo. Con las toneladas aparecen el sendero, el torii, el estanque, la campana, el jardín seco, la pagoda y el bosque de bambú.</p>
+        <p class="pista-control">Mueve el control y míralo crecer.</p>
+      </div>
+      <figure class="templo-fig" data-templo data-revela>
+        <div class="templo-marco"><img class="templo-img" src="img/app/templo-7.webp" width="720" height="646" loading="lazy" decoding="async" alt="El templo de la Casa con 7 de 7 piezas levantadas"></div>
+        <figcaption>
+          <label class="templo-cuenta" for="templo-rango">750 t · 7 de 7 piezas</label>
+          <input id="templo-rango" type="range" min="0" max="7" step="1" value="7">
+          <span class="templo-pieza">El bosque de bambú cierra el templo.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="seccion ceremonia" data-ceremonia data-revela aria-labelledby="t-ceremonia">
+    <div class="contenedor cer">
+      <div class="cer-visual" aria-hidden="true">
+        <canvas class="enso"></canvas>
+        <div class="cer-logo"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="h3"><stop class="h-a" offset="0" stop-color="#8B5CF6" stop-opacity=".34"/><stop class="h-a" offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="l3" x1="0" y1="0" x2="1" y2="1"><stop class="l-a" offset="0" stop-color="#F4F1FA"/><stop class="l-b" offset="1" stop-color="#B79CFF"/></linearGradient>
+    <mask id="m3" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><circle cx="62.6" cy="45.8" r="37.8" fill="#000"/></mask>
+  </defs>
+  <circle class="halo" cx="50" cy="50" r="79.8" fill="url(#h3)"/>
+  <g class="creciente"><circle cx="50" cy="50" r="42" fill="url(#l3)" mask="url(#m3)"/></g>
+  <g class="torii" fill="none" stroke="#B79CFF" stroke-linecap="round">
+    <path pathLength="1" stroke-width="3.4" d="M29.4 36.2Q48 31.4 66.6 36.2"/>
+    <path pathLength="1" stroke-width="2.6" d="M32.4 40.4H63.6"/>
+    <path pathLength="1" stroke-width="2.6" d="M33.6 40.4L36 66.5"/>
+    <path pathLength="1" stroke-width="2.6" d="M62.4 40.4L60 66.5"/>
+    <path pathLength="1" stroke-width="2.6" d="M35.4 48.2H60.6"/>
+    <path pathLength="1" stroke-width="1.8" d="M48 40.4V48.2"/>
+  </g>
+</svg></div>
+        <span class="hanko" lang="ja">完</span>
+      </div>
+      <div class="cer-texto">
+        <p class="ojo"><span lang="ja">完</span> Sesión completada</p>
+        <h2 id="t-ceremonia">Cada sesión se celebra.</h2>
+        <p>Al terminar, la app te muestra lo que hiciste: cifras, récords, tu semana y, si subiste, tu nuevo nivel. Este es un ejemplo.</p>
+        <div class="cifras">
+          <div><strong data-cuenta="4820" data-retraso="400">4.820</strong><small>kg de volumen</small></div>
+          <div><strong data-cuenta="52" data-retraso="550">52</strong><small>minutos</small></div>
+          <div><strong data-cuenta="18" data-retraso="700">18</strong><small>series</small></div>
+        </div>
+        <div class="xp"><div class="fila"><span class="xp-nivel">Nivel 4</span><small>+<b data-cuenta="340" data-retraso="900">340</b> XP</small></div><div class="barrita"><i class="xp-barra"></i></div></div>
+        <p class="dicho"><b lang="ja">七転び八起き</b>Cae siete veces, levántate ocho.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="seccion" id="instalar" aria-labelledby="t-instalar">
     <div class="contenedor">
-      <header>
+      <header data-revela>
         <h2 id="t-instalar">Instálala en cuatro pasos</h2>
         <p>La app todavía no está en Google Play, así que se instala desde aquí. Android te pedirá permiso porque no viene de la tienda: es normal con cualquier app instalada así.</p>
       </header>
       <ol class="pasos">
-        <li class="paso">
+        <li class="paso" data-revela style="--i:0">
           <h3>Descarga el archivo</h3>
           <p>Toca «Descargar para Android». Si Chrome pregunta si quieres conservar el archivo, elige «Descargar de todos modos».</p>
           <div class="pantalla" aria-hidden="true"><span>Este tipo de archivo puede dañar tu dispositivo. ¿Quieres descargar TempleOfStrength.apk?</span><span class="acciones"><span>Cancelar</span><span>Descargar de todos modos</span></span></div>
         </li>
-        <li class="paso">
+        <li class="paso" data-revela style="--i:1">
           <h3>Ábrelo</h3>
           <p>Cuando termine, toca «Abrir» en el aviso de descarga. Si lo cerraste, búscalo en la app Archivos, carpeta Descargas.</p>
           <div class="pantalla" aria-hidden="true"><span>TempleOfStrength.apk se descargó</span><span class="acciones"><span>Abrir</span></span></div>
         </li>
-        <li class="paso">
+        <li class="paso" data-revela style="--i:2">
           <h3>Permite la instalación</h3>
           <p>Solo la primera vez: Android te lleva a Configuración. Activa «Permitir de esta fuente» y vuelve atrás.</p>
           <div class="pantalla" aria-hidden="true"><span class="interruptor">Permitir de esta fuente <i></i></span></div>
         </li>
-        <li class="paso">
+        <li class="paso" data-revela style="--i:3">
           <h3>Instala y entra</h3>
           <p>Toca «Instalar». Si Play Protect pregunta, elige «Instalar de todos modos». Abre Temple of Strength y crea tu cuenta.</p>
           <div class="pantalla" aria-hidden="true"><span>¿Quieres instalar esta app?</span><span class="acciones"><span>Cancelar</span><span>Instalar</span></span></div>
@@ -208,11 +301,11 @@
 
   <section class="seccion" id="seguridad" aria-labelledby="t-seguridad">
     <div class="contenedor">
-      <header>
+      <header data-revela>
         <h2 id="t-seguridad">Qué hace la app con tu teléfono</h2>
         <p>Pide lo mínimo. Todo viaja cifrado y tu progreso es tuyo.</p>
       </header>
-      <div class="seguridad">
+      <div class="seguridad" data-revela>
         <ul class="lista-segura">
           <li style="display:block"><h3>Lo que usa</h3></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#5BD6A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><div>Internet<span>Para guardar tu progreso en la nube, el Clan y hablar con Tenshi. Siempre por conexión cifrada.</span></div></li>
@@ -240,7 +333,7 @@
 
   <section class="seccion" aria-labelledby="t-preguntas">
     <div class="contenedor">
-      <header><h2 id="t-preguntas">Preguntas</h2></header>
+      <header data-revela><h2 id="t-preguntas">Preguntas</h2></header>
       <div class="preguntas">
       <details><summary>¿Mi gym puede estar en la app?</summary><p>Sí. Los Templos aliados tienen su perfil con fotos, planes, horario, máquinas y ubicación; su propio ranking; registro de entradas para ver cuántas personas hay; control de mensualidades; avisos, retos y reseñas. El dueño y sus coaches reciben el Pase del Templo. Escríbenos a temple-of-strength@outlook.com o pídelo desde la app en Clan → Gym.</p></details>
       <details><summary>¿Cuánto cuesta?</summary><p>Nada. Entrenar, las rutinas, Ranked, el Clan, la Casa y el Taller son gratis. El Pase del Templo es opcional y llegará cuando la app esté en Google Play.</p></details>
@@ -257,15 +350,15 @@
   </section>
 
   <section class="seccion" aria-labelledby="t-cierre">
-    <div class="contenedor cierre">
+    <div class="contenedor cierre" data-revela>
       <svg class="mini" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
   <defs>
-    <radialGradient id="h3"><stop class="h-a" offset="0" stop-color="#8B5CF6" stop-opacity=".34"/><stop class="h-a" offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
-    <linearGradient id="l3" x1="0" y1="0" x2="1" y2="1"><stop class="l-a" offset="0" stop-color="#F4F1FA"/><stop class="l-b" offset="1" stop-color="#B79CFF"/></linearGradient>
-    <mask id="m3" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><circle cx="62.6" cy="45.8" r="37.8" fill="#000"/></mask>
+    <radialGradient id="h4"><stop class="h-a" offset="0" stop-color="#8B5CF6" stop-opacity=".34"/><stop class="h-a" offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="l4" x1="0" y1="0" x2="1" y2="1"><stop class="l-a" offset="0" stop-color="#F4F1FA"/><stop class="l-b" offset="1" stop-color="#B79CFF"/></linearGradient>
+    <mask id="m4" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><circle cx="62.6" cy="45.8" r="37.8" fill="#000"/></mask>
   </defs>
-  <circle class="halo" cx="50" cy="50" r="79.8" fill="url(#h3)"/>
-  <g class="creciente"><circle cx="50" cy="50" r="42" fill="url(#l3)" mask="url(#m3)"/></g>
+  <circle class="halo" cx="50" cy="50" r="79.8" fill="url(#h4)"/>
+  <g class="creciente"><circle cx="50" cy="50" r="42" fill="url(#l4)" mask="url(#m4)"/></g>
   <g class="torii" fill="none" stroke="#B79CFF" stroke-linecap="round">
     <path pathLength="1" stroke-width="3.4" d="M29.4 36.2Q48 31.4 66.6 36.2"/>
     <path pathLength="1" stroke-width="2.6" d="M32.4 40.4H63.6"/>
@@ -282,6 +375,9 @@
     </div>
     </div>
   </section>
+  <div class="barra-descarga">
+    <a class="boton boton-principal" data-apk href="#instalar" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5v11"/><path d="m7 10 5 5 5-5"/><path d="M4.5 16.5v2a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-2"/></svg><span class="texto-boton">Descargar para Android</span></a>
+  </div>
 </main>
 <footer class="pie">
   <div class="contenedor">
@@ -295,7 +391,9 @@
     </nav>
   </div>
 </footer>
-<script src="config.js?v=20261113a"></script>
-<script src="js/templo.js?v=20261113a"></script>
+<script src="config.js?v=20261116a"></script>
+<script src="js/templo.js?v=20261116a"></script>
+<script src="js/cielo.js?v=20261116a"></script>
+<script src="js/animar.js?v=20261116a"></script>
 </body>
 </html>
